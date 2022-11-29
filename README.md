@@ -1,0 +1,1 @@
+<img align="center" alt="MGK-JAVA" height="45" width="55" src=./Agendamento-Quadra.drawio>
