@@ -11,7 +11,7 @@ import java.text.ParseException;
 
 @Configuration
 @Profile("dev")
-public class DevTest {
+public class DevConfig {
 
     @Autowired
     private DBService dbService;

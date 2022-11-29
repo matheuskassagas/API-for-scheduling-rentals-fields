@@ -20,4 +20,5 @@ public class ConfigTest {
         dbService.instantiateTestDataBase();
         return true;
     }
+
 }

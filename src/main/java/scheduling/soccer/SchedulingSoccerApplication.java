@@ -3,9 +3,12 @@ package scheduling.soccer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
 
 @SpringBootApplication
 public class SchedulingSoccerApplication implements CommandLineRunner {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SchedulingSoccerApplication.class, args);
@@ -16,5 +19,10 @@ public class SchedulingSoccerApplication implements CommandLineRunner {
 	//		service.uploadFile("C:\\temp\\Capturar.PNG");
 
 	}
+
+//	@Bean
+//	BCryptPasswordEncoder bCryptPasswordEncoder() {
+//		return new BCryptPasswordEncoder();
+//	}
 	
 }
