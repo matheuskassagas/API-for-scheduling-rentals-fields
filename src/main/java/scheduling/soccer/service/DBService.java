@@ -1,7 +1,6 @@
-package scheduling.service;
+package scheduling.soccer.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;

@@ -1,10 +1,10 @@
-package scheduling.config;
+package scheduling.soccer.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import scheduling.service.DBService;
+import scheduling.soccer.service.DBService;
 
 import java.text.ParseException;
 
