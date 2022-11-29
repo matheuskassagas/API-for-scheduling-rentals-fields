@@ -1,1 +1,1 @@
-<img alt="MGK-JAVA" height="45" width="55" src=./Agendamento-Quadra.drawio.png>
+<img alt="MGK-JAVA" height="1080" width="1400" src=./Agendamento-Quadra.drawio.png>
