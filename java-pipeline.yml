@@ -1,0 +1,50 @@
+name: Java CI/CD
+
+on:
+  push:
+    branches: 
+      - cicd
+
+jobs:
+  build_java_aplication:
+    runs-on: self-hosted
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+    - name: Repository checkout
+      uses: actions/checkout@v3
+
+    - name: Setting up JDK Latest
+      uses: actions/setup-java@v2
+      with:
+        java-version: "17"
+        distribution: "adopt"
+
+    - name: Build project with Maven
+      run: |
+        mvn clean
+        mvn package --batch-mode -DskipTests
+        mvn package 
+    # - name: Configure AWS Credentials
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     aws-region: ${{ secrets.AWS_REGION }}
+
+    # - name: Log in to Amazon ECR
+    #   id: login-ecr
+    #   uses: aws-actions/amazon-ecr-login@v1
+
+    # - name: Build, tag, and push image to Amazon ECR
+    #   shell: bash
+    #   env:
+    #     ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+    #     ECR_REPOSITORY: pipeline-java-images
+    #     IMAGE_TAG: ${{ github.sha }}
+    #   run: |
+    #     docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f devops/application/build/Dockerfile .
+    #     echo "Pushing image to ECR..."
+    #     docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+    #     echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
